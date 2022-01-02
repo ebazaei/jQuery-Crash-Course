@@ -47,23 +47,21 @@
         <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque magnam, eligendi velit odio eveniet, deleniti laudantium inventore tenetur doloribus suscipit praesentium. Tempora perspiciatis ipsum ullam explicabo deleniti sed adipisci.</p>
 
         <!-- <h1 id="croods"></h1> -->
-        <input type="name" id="name" name="name">
-        <br>
-        <input type="email" id="email" name="email">
-        <br>
-        <select name="gender" id="gender">
-            <option value="m">m</option>
-            <option value="f">f</option>
-        </select>
-        <br>
-        <form action="">
-            
+
+        <form action="" id="form">
+            <input type="name" id="name" name="name">
+            <br>
+            <input type="email" id="email" name="email">
+            <br>
+            <select name="gender" id="gender">
+                <option value="m">m</option>
+                <option value="f">f</option>
+            </select>
+            <br>   
+            <button type="submit">send</button> 
         </form>
 
-
     </div>
-
-    
 
     <script src="./script.js"></script>
 
@@ -139,7 +137,7 @@
             //alert('Focus');
             $('input#name').css('background' , 'pink');
         });
-        */
+        
 
 
         $('input').focus(function(){
@@ -154,11 +152,26 @@
         $('input').keyup(function(e){
             console.log(e.target.value);
         });
+        
 
+        $('select#gender').change(function(){
+            alert('change');
+        });
+        
+        $('select#gender').change(function(e){
+            alert(e.target.value);
+        });
 
-
-
-
+        $('#form').submit(function(e){
+            e.preventDefault();
+            console.log('submitted');
+        });
+*/
+        $('#form').submit(function(e){
+            e.preventDefault();
+            var name = $('input#name').val();
+            console.log(name);
+        });
 
 
 
