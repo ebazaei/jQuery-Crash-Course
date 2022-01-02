@@ -40,11 +40,30 @@
         <p class="para1">para 1</p>
         <p class="para2">para 2</p>
         <div id="myDiv"></div>
+
+        <input type="text" name="" id="newItem">
         <ul>
             <li>list 1</li>
             <li>list 2</li>
             <li>list 3</li>
         </ul>
+
+        
+
+        <a href="http://google.com">link</a>
+
+        <ul id="users">
+        </ul>
+
+        <hr>
+
+        
+        <ul id="list">
+            <li>list A</li>
+            <li>list B</li>
+            <li>list C</li>
+        </ul>
+
     </div>
 
     <script src="./script.js"></script>
@@ -65,7 +84,7 @@
         $('#myDiv').text('Hello World');
         $('#myDiv').html('<h3>Hello World 2</h3>');
         alert($('#myDiv').text());
-        */
+        
         
         $('ul').append('<li>Append List item</li>');
         $('ul').append('<li>Append List item v2</li>');
@@ -76,6 +95,56 @@
         $('ul').before('<h3>Hello </h3>');
         $('ul').after('<h3>world </h3>');
         $('ul').empty();
+
+        $('a').attr('target','_blank');
+        alert($('a').attr('href'));
+        $('a').removeAttr('target');
+
+        
+       $('p').wrapAll('<h1>')
+        
+
+
+
+
+        $('#newItem').keyup(function(e){
+            var code = e.which;
+            if(code == 13){
+                e.preventDefault();
+                $('ul').append('<li>'+ e.target.value +'</li>');
+            }
+        });
+
+        var myArr = ['a1','b1','c1','d1'];
+
+        $.each(myArr,function(i, val){
+            $('#users').append('<li>'+val+'</li>');
+        });
+        */
+
+
+
+
+
+        $('#newItem').keyup(function(e){
+            var code = e.which;
+            if(code == 13){
+                e.preventDefault();
+                $('ul').append('<li>'+ e.target.value +'</li>');
+            }
+        });
+
+        var newArr = $('ul#list li').toArray();
+        $.each(newArr,function(i, val){
+            console.log(val.innerHTML);
+        });
+
+
+
+
+
+
+
 
     </script>
 
