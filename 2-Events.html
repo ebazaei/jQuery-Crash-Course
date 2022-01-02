@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>jQuery Crash Course [2] - Events</title>
+
+    <script>
+        // //ba documen.ready script java hata agar balaie safhe bashad amal mikonad
+        // $(document).ready(function(){
+        //     $('#btn1').click(function(){
+        //     alert('button click');
+        //     })
+        // })
+    </script>
+
+    <style>
+        body{
+            font-size: 17px;
+            background-color: #fff;
+        }
+        header{
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course [2] - Events</h1>
+    </header>
+
+    <div id="container">
+        <h3>Mouse Events</h3>
+        <button id="btn1" class="btnclass">Button1</button>
+        <button id="btn2">Button2</button>
+        <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque magnam, eligendi velit odio eveniet, deleniti laudantium inventore tenetur doloribus suscipit praesentium. Tempora perspiciatis ipsum ullam explicabo deleniti sed adipisci.</p>
+
+        <!-- <h1 id="croods"></h1> -->
+        <input type="name" id="name" name="name">
+        <br>
+        <input type="email" id="email" name="email">
+        <br>
+        <select name="gender" id="gender">
+            <option value="m">m</option>
+            <option value="f">f</option>
+        </select>
+        <br>
+        <form action="">
+            
+        </form>
+
+
+    </div>
+
+    
+
+    <script src="./script.js"></script>
+
+    <script>
+
+/*
+        $('#btn1').click(function(){
+            alert('button click');
+        })
+
+        $('#btn1').on('click',function(){
+            alert('button click');
+        })
+
+        $('#btn1').on('click',function(){
+            //$('.para1').hide();
+            //.show va hide ba 1 dokmeh ba toggel
+            $('.para1').toggle();
+        });
+        $('#btn2').on('click',function(){
+            $('.para1').show();
+        });
+
+        $('#btn1').dblclick(function(){
+            $('.para1').toggle();
+        })
+
+        $('#btn1').hover(function(){
+            $('.para1').toggle();
+        })
+
+        $('#btn1').on('mouseenter',function(){
+            $('.para1').toggle();
+        });
+        $('#btn1').on('mouseleave',function(){
+            $('.para1').toggle();
+        });
+
+        $('#btn1').on('mousemove',function(){
+            $('.para1').toggle();
+        });
+
+        //hengame click vaghti click mikoni ya vaghti vel mikoni ...
+        $('#btn1').on('mousedown',function(){
+            $('.para1').toggle();
+        });        
+        $('#btn1').on('mouseup',function(){
+            $('.para1').toggle();
+        });
+        
+        
+
+        $('#btn1').click(function(e){
+            //alert(e.currentTarget.id);
+            //alert(e.currentTarget.innerHTML);
+            //alert(e.currentTarget.outerHTML);
+            //alert(e.currentTarget.className);
+        })
+        
+
+        $('#btn1').on('mousemove',function(e){
+            console.log('Coords: Y: '+e.clientY+" x: "+e.clientX)
+        });
+        
+
+
+        $(document).on('mousemove',function(e){
+            $('#croods').html('Coords: Y: '+e.clientY+" x: "+e.clientX);
+        });
+        
+
+        $('input').focus(function(){
+            //alert('Focus');
+            $('input#name').css('background' , 'pink');
+        });
+        */
+
+
+        $('input').focus(function(){
+            //alert('Focus');
+            $(this).css('background' , 'pink');
+        });
+        $('input').blur(function(){
+            //alert('Focus');
+            $(this).css('background' , 'white');
+        });
+
+        $('input').keyup(function(e){
+            console.log(e.target.value);
+        });
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
