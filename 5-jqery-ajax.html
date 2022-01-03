@@ -40,9 +40,13 @@
     <script src="./script.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $('#result').load('test.html');
-        })
+        // $(document).ready(function(){
+        //     $('#result').load('test.html');
+        // });
+
+        $.get('test.html' , function(data){
+            $('#result').html(data);
+        });
     </script>
 
 
