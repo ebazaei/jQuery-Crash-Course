@@ -35,19 +35,41 @@
     <div id="container">
         <div id="result"></div>
 
+        <ul id="users"></ul>
+
     </div>
 
     <script src="./script.js"></script>
 
-    <script>
+<script>
+    $(document).ready(function(){
+
+        
         // $(document).ready(function(){
         //     $('#result').load('test.html');
         // });
 
-        $.get('test.html' , function(data){
-            $('#result').html(data);
+        // $.get('test.html' , function(data){
+        //     $('#result').html(data);
+        // });
+
+        // $.getJSON('users.json',function(data){
+        //     $.each(data, function(i, user){
+        //         $('ul#users').append('<li>'+user.firstName+'</li>');
+        //     });
+        // });
+
+        $.ajax({
+            method: 'GET',
+            url: 'https://jsonplaceholder.typicode.com/posts',
+            dataType: 'json'
+        }) done(function(data){
+            console.log(data);
+            
         });
-    </script>
+    });
+        
+</script>
 
 
 </body>
